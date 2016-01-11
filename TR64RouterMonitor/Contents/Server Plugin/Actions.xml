@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<Actions>
+    <SupportURL>http://bpannier.github.io/routermonitor/</SupportURL>
+    <Action id="resetDevice" deviceFilter="self.routerSystem">
+        <Name>Reset Device</Name>
+        <CallbackMethod>queueAction</CallbackMethod>
+    </Action>
+    <Action id="enableInterface" deviceFilter="self.routerLan,self.routerWan,self.routerWifi">
+        <Name>Enable Interface</Name>
+        <CallbackMethod>queueAction</CallbackMethod>
+    </Action>
+    <Action id="disableInterface" deviceFilter="self.routerLan,self.routerWan,self.routerWifi">
+        <Name>Disable Interface</Name>
+        <CallbackMethod>queueAction</CallbackMethod>
+    </Action>
+    <Action id="setSSID" deviceFilter="self.routerWifi">
+        <Name>Set SSID/WIFI network name</Name>
+        <CallbackMethod>queueAction</CallbackMethod>
+        <ConfigUI>
+            <Field id="value" type="textfield">
+                <Label>SSID:</Label>
+            </Field>
+        </ConfigUI>
+    </Action>
+    <Action id="setChannel" deviceFilter="self.routerWifi">
+        <Name>Set channel</Name>
+        <CallbackMethod>queueAction</CallbackMethod>
+        <ConfigUI>
+            <Field id="value" type="textfield">
+                <Label>Channel:</Label>
+            </Field>
+        </ConfigUI>
+    </Action>
+    <Action id="terminateConnection" deviceFilter="self.routerWan">
+        <Name>Terminate Connection</Name>
+        <CallbackMethod>queueAction</CallbackMethod>
+    </Action>
+    <Action id="requestConnection" deviceFilter="self.routerWan">
+        <Name>Request Connection</Name>
+        <CallbackMethod>queueAction</CallbackMethod>
+    </Action>
+    <Action id="optimizeForIPTV" deviceFilter="self.fritzSystem">
+        <Name>Optimize Wifi for IP TV</Name>
+        <CallbackMethod>queueAction</CallbackMethod>
+        <ConfigUI>
+            <Field id="value" type="textfield">
+                <Label>Wifi Interface ID:</Label>
+            </Field>
+        </ConfigUI>
+    </Action>
+    <Action id="dontOptimizeForIPTV" deviceFilter="self.fritzSystem">
+        <Name>Do not Optimize Wifi for IP TV</Name>
+        <CallbackMethod>queueAction</CallbackMethod>
+        <ConfigUI>
+            <Field id="value" type="textfield">
+                <Label>Wifi Interface ID:</Label>
+            </Field>
+        </ConfigUI>
+    </Action>
+    <Action id="doUpdate" deviceFilter="self.fritzSystem">
+        <Name>Do Software Update</Name>
+        <CallbackMethod>queueAction</CallbackMethod>
+    </Action>
+</Actions>

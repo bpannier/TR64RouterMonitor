@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<MenuItems>
+    <MenuItem id="menu1">
+        <Name>Reset Interface</Name>
+        <CallbackMethod>resetInterface</CallbackMethod>
+    </MenuItem>
+    <MenuItem id="menu2">
+        <Name>Check for Updates</Name>
+        <CallbackMethod>checkForUpdates</CallbackMethod>
+    </MenuItem>
+</MenuItems>

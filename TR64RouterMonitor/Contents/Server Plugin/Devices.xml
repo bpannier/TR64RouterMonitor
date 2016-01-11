@@ -1,0 +1,522 @@
+<Devices>
+	<Device type="custom" id="routerSystem">
+		<Name>Router System</Name>
+		<ConfigUI>
+            <SupportURL>http://bpannier.github.io/routermonitor/</SupportURL>
+			<Field id="networkRouter" type="menu">
+				<Label>Network Router:</Label>
+				<List class="self" filter="stuff" method="networkRouterGenerator"/>
+			</Field>
+			<Field type="checkbox" id="manualRouterEntry" defaultValue="false"
+				   tooltip="Enable when your router have not been found in the list above and you need to enter the parameter manually. Make sure the UPnP functionality in your router is enabled.">
+				<Label>Manually Enter Router URL:</Label>
+			</Field>
+			<Field id="routerURL" type="textfield" enabledBindingId="manualRouterEntry"
+				   tooltip="The URL to the router device definitions. Make sure the UPnP functionality in your router is enabled then it should appear in the list above. An example of a valid URL is: http://192.168.178.28:49000/tr64desc.xml">
+				<Label>Router URL:</Label>
+			</Field>
+			<Field id="username" type="textfield" tooltip="If your router needs authentication, enter the username here.">
+				<Label>Username(optional):</Label>
+			</Field>
+			<Field id="password" type="textfield" tooltip="If your router needs authentication, enter the password here.">
+				<Label>Password(optional):</Label>
+			</Field>
+            <Field type="checkbox" id="ignoreErrors" defaultValue="false"
+				   tooltip="When enabled any error of this device will be ignored. This is useful, to avoid too much error log entries after validation the configuration is ok.">
+				<Label>Ignore Errors:</Label>
+			</Field>
+            <Field id="address" type="textfield" hidden="true">
+				<Label />
+			</Field>
+		</ConfigUI>
+		<States>
+			<State id="softwareVersion" readonly="YES">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Current Software Version</TriggerLabel>
+				<ControlPageLabel>Current Software Version</ControlPageLabel>
+			</State>
+            <State id="softwareUpdateAvailable" readonly="YES">
+				<ValueType>Boolean</ValueType>
+				<TriggerLabel>Is a software update available</TriggerLabel>
+				<ControlPageLabel>Is a software update available</ControlPageLabel>
+			</State>
+			<State id="uptime" readonly="YES">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>Uptime in seconds</TriggerLabel>
+				<ControlPageLabel>Uptime in seconds</ControlPageLabel>
+			</State>
+			<State id="currentTime" readonly="YES">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Current time</TriggerLabel>
+				<ControlPageLabel>Current time</ControlPageLabel>
+			</State>
+			<State id="currentTimeZone" readonly="YES">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Current timezone</TriggerLabel>
+				<ControlPageLabel>Current timezone</ControlPageLabel>
+			</State>
+        </States>
+        <UiDisplayStateId>uptime</UiDisplayStateId>
+    </Device>
+    <Device type="custom" id="routerLan">
+		<Name>LAN Router</Name>
+		<ConfigUI>
+            <SupportURL>http://bpannier.github.io/routermonitor/</SupportURL>
+            <Field id="interfaceID" type="textfield" defaultValue="1" tooltip="If your router has more than one LAN interface you can choose the right one here. Needs to be positive number.">
+				<Label>LAN interface ID:</Label>
+			</Field>
+			<Field id="networkRouter" type="menu">
+				<Label>Network Router:</Label>
+				<List class="self" filter="stuff" method="networkRouterGenerator"/>
+			</Field>
+			<Field type="checkbox" id="manualRouterEntry" defaultValue="false"
+				   tooltip="Enable when your router have not been found in the list above and you need to enter the parameter manually. Make sure the UPnP functionality in your router is enabled.">
+				<Label>Manually Enter Router URL:</Label>
+			</Field>
+			<Field id="routerURL" type="textfield" enabledBindingId="manualRouterEntry"
+				   tooltip="The URL to the router device definitions. Make sure the UPnP functionality in your router is enabled then it should appear in the list above. An example of a valid URL is: http://192.168.178.28:49000/tr64desc.xml">
+				<Label>Router URL:</Label>
+			</Field>
+			<Field id="username" type="textfield" tooltip="If your router needs authentication, enter the username here.">
+				<Label>Username(optional):</Label>
+			</Field>
+			<Field id="password" type="textfield" tooltip="If your router needs authentication, enter the password here.">
+				<Label>Password(optional):</Label>
+			</Field>
+            <Field type="checkbox" id="ignoreErrors" defaultValue="false"
+				   tooltip="When enabled any error of this device will be ignored. This is useful, to avoid too much error log entries after validation the configuration is ok.">
+				<Label>Ignore Errors:</Label>
+			</Field>
+            <Field id="address" type="textfield" hidden="true">
+				<Label />
+			</Field>
+		</ConfigUI>
+        <States>
+			<State id="hostsConnected" readonly="YES">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>Amount of hosts connected</TriggerLabel>
+				<ControlPageLabel>Amount of hosts connected</ControlPageLabel>
+			</State>
+			<State id="lanBytesSent" readonly="YES">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>Bytes Sent on LAN</TriggerLabel>
+				<ControlPageLabel>Bytes Sent on LAN</ControlPageLabel>
+			</State>
+			<State id="lanBytesReceived" readonly="YES">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>Bytes Received on LAN</TriggerLabel>
+				<ControlPageLabel>Bytes Received on LAN</ControlPageLabel>
+			</State>
+			<State id="lanPacketsSent" readonly="YES">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>Packets Sent on LAN</TriggerLabel>
+				<ControlPageLabel>Packets Sent on LAN</ControlPageLabel>
+			</State>
+			<State id="lanPacketsReceived" readonly="YES">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>Packets Received on LAN</TriggerLabel>
+				<ControlPageLabel>Packets Received on LAN</ControlPageLabel>
+			</State>
+			<State id="lanEnabled" readonly="YES">
+				<ValueType>Boolean</ValueType>
+				<TriggerLabel>LAN enabled</TriggerLabel>
+				<ControlPageLabel>LAN enabled</ControlPageLabel>
+			</State>
+			<State id="lanStatus" readonly="YES">
+				<ValueType>String</ValueType>
+				<TriggerLabel>LAN status</TriggerLabel>
+				<ControlPageLabel>LAN status</ControlPageLabel>
+			</State>
+			<State id="lanMaxBitrate" readonly="YES">
+				<ValueType>String</ValueType>
+				<TriggerLabel>LAN max Bitrate</TriggerLabel>
+				<ControlPageLabel>LAN max Bitrate</ControlPageLabel>
+			</State>
+			<State id="lanDuplex" readonly="YES">
+				<ValueType>String</ValueType>
+				<TriggerLabel>LAN Duplex Mode</TriggerLabel>
+				<ControlPageLabel>LAN Duplex Mode</ControlPageLabel>
+			</State>
+        </States>
+        <UiDisplayStateId>hostsConnected</UiDisplayStateId>
+    </Device>
+    <Device type="custom" id="routerWan">
+		<Name>WAN Router</Name>
+		<ConfigUI>
+            <SupportURL>http://bpannier.github.io/routermonitor/</SupportURL>
+            <Field id="interfaceID" type="textfield" defaultValue="1" tooltip="If your router has more than one WAN interface you can choose the right one here. Needs to be positive number.">
+				<Label>WAN interface ID:</Label>
+			</Field>
+			<Field id="networkRouter" type="menu">
+				<Label>Network Router:</Label>
+				<List class="self" filter="stuff" method="networkRouterGenerator"/>
+			</Field>
+			<Field type="checkbox" id="manualRouterEntry" defaultValue="false"
+				   tooltip="Enable when your router have not been found in the list above and you need to enter the parameter manually. Make sure the UPnP functionality in your router is enabled.">
+				<Label>Manually Enter Router URL:</Label>
+			</Field>
+			<Field id="routerURL" type="textfield" enabledBindingId="manualRouterEntry"
+				   tooltip="The URL to the router device definitions. Make sure the UPnP functionality in your router is enabled then it should appear in the list above. An example of a valid URL is: http://192.168.178.28:49000/tr64desc.xml">
+				<Label>Router URL:</Label>
+			</Field>
+			<Field id="username" type="textfield" tooltip="If your router needs authentication, enter the username here.">
+				<Label>Username(optional):</Label>
+			</Field>
+			<Field id="password" type="textfield" tooltip="If your router needs authentication, enter the password here.">
+				<Label>Password(optional):</Label>
+			</Field>
+            <Field type="checkbox" id="ignoreErrors" defaultValue="false"
+				   tooltip="When enabled any error of this device will be ignored. This is useful, to avoid too much error log entries after validation the configuration is ok.">
+				<Label>Ignore Errors:</Label>
+			</Field>
+            <Field id="address" type="textfield" hidden="true">
+				<Label />
+			</Field>
+		</ConfigUI>
+		<States>
+			<State id="wanBytesSent" readonly="YES">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>Bytes Sent on WAN</TriggerLabel>
+				<ControlPageLabel>Bytes Sent on WAN</ControlPageLabel>
+			</State>
+			<State id="wanBytesReceived" readonly="YES">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>Bytes Received on WAN</TriggerLabel>
+				<ControlPageLabel>Bytes Received on WAN</ControlPageLabel>
+			</State>
+			<State id="wanPacketsSent" readonly="YES">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>Packets Sent on WAN</TriggerLabel>
+				<ControlPageLabel>Packets Sent on WAN</ControlPageLabel>
+			</State>
+			<State id="wanPacketsReceived" readonly="YES">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>Packets Received on WAN</TriggerLabel>
+				<ControlPageLabel>Packets Received on WAN</ControlPageLabel>
+			</State>
+			<State id="wanEnabled" readonly="YES">
+				<ValueType>Boolean</ValueType>
+				<TriggerLabel>WAN enabled</TriggerLabel>
+				<ControlPageLabel>WAN enabled</ControlPageLabel>
+			</State>
+			<State id="wanStatus" readonly="YES">
+				<ValueType>String</ValueType>
+				<TriggerLabel>WAN status</TriggerLabel>
+				<ControlPageLabel>WAN status</ControlPageLabel>
+			</State>
+			<State id="wanUpstreamRate" readonly="YES">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>WAN Upstream rate</TriggerLabel>
+				<ControlPageLabel>WAN Upstream rate</ControlPageLabel>
+			</State>
+			<State id="wanDownstreamRate" readonly="YES">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>WAN Downstream rate</TriggerLabel>
+				<ControlPageLabel>WAN Downstream rate</ControlPageLabel>
+			</State>
+			<State id="wanUpstreamMaxRate" readonly="YES">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>WAN Max Upstream rate</TriggerLabel>
+				<ControlPageLabel>WAN Max Upstream rate</ControlPageLabel>
+			</State>
+			<State id="wanDownstreamMaxRate" readonly="YES">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>WAN Max Downstream rate</TriggerLabel>
+				<ControlPageLabel>WAN Max Downstream rate</ControlPageLabel>
+			</State>
+			<State id="wanUptime" readonly="YES">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>WAN Uptime</TriggerLabel>
+				<ControlPageLabel>WAN Uptime</ControlPageLabel>
+			</State>
+			<State id="wanLastError" readonly="YES">
+				<ValueType>String</ValueType>
+				<TriggerLabel>WAN Last Error</TriggerLabel>
+				<ControlPageLabel>WAN Last Error</ControlPageLabel>
+			</State>
+			<State id="wanExternalIP" readonly="YES">
+				<ValueType>String</ValueType>
+				<TriggerLabel>WAN External IP</TriggerLabel>
+				<ControlPageLabel>WAN External IP</ControlPageLabel>
+			</State>
+            <State id="wanExternalDNS" readonly="YES">
+				<ValueType>String</ValueType>
+				<TriggerLabel>WAN External DNS</TriggerLabel>
+				<ControlPageLabel>WAN External DNS</ControlPageLabel>
+			</State>
+            <State id="wanLinkStatus" readonly="YES">
+				<ValueType>String</ValueType>
+				<TriggerLabel>WAN Link Status</TriggerLabel>
+				<ControlPageLabel>WAN Link Status</ControlPageLabel>
+			</State>
+        </States>
+        <UiDisplayStateId>wanUptime</UiDisplayStateId>
+    </Device>
+    <Device type="custom" id="routerWifi">
+		<Name>WIFI Router</Name>
+		<ConfigUI>
+            <SupportURL>http://bpannier.github.io/routermonitor/</SupportURL>
+            <Field id="interfaceID" type="textfield" defaultValue="1" tooltip="If your router has more than one WIFI interface (2.4, 5ghz etc) you can choose the right one here. Needs to be positive number.">
+				<Label>WIFI interface ID:</Label>
+			</Field>
+			<Field id="networkRouter" type="menu">
+				<Label>Network Router:</Label>
+				<List class="self" filter="stuff" method="networkRouterGenerator"/>
+			</Field>
+			<Field type="checkbox" id="manualRouterEntry" defaultValue="false"
+				   tooltip="Enable when your router have not been found in the list above and you need to enter the parameter manually. Make sure the UPnP functionality in your router is enabled.">
+				<Label>Manually Enter Router URL:</Label>
+			</Field>
+			<Field id="routerURL" type="textfield" enabledBindingId="manualRouterEntry"
+				   tooltip="The URL to the router device definitions. Make sure the UPnP functionality in your router is enabled then it should appear in the list above. An example of a valid URL is: http://192.168.178.28:49000/tr64desc.xml">
+				<Label>Router URL:</Label>
+			</Field>
+			<Field id="username" type="textfield" tooltip="If your router needs authentication, enter the username here.">
+				<Label>Username(optional):</Label>
+			</Field>
+			<Field id="password" type="textfield" tooltip="If your router needs authentication, enter the password here.">
+				<Label>Password(optional):</Label>
+			</Field>
+            <Field type="checkbox" id="ignoreErrors" defaultValue="false"
+				   tooltip="When enabled any error of this device will be ignored. This is useful, to avoid too much error log entries after validation the configuration is ok.">
+				<Label>Ignore Errors:</Label>
+			</Field>
+            <Field id="address" type="textfield" hidden="true">
+				<Label />
+			</Field>
+		</ConfigUI>
+		<States>
+			<State id="wifiBytesSent" readonly="YES">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>Bytes Sent on Wifi</TriggerLabel>
+				<ControlPageLabel>Bytes Sent on Wifi</ControlPageLabel>
+			</State>
+			<State id="wifiBytesReceived" readonly="YES">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>Bytes Received on Wifi</TriggerLabel>
+				<ControlPageLabel>Bytes Received on Wifi</ControlPageLabel>
+			</State>
+			<State id="wifiPacketsSent" readonly="YES">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>Packets Sent on Wifi</TriggerLabel>
+				<ControlPageLabel>Packets Sent on Wifi</ControlPageLabel>
+			</State>
+			<State id="wifiPacketsReceived" readonly="YES">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>Packets Received on Wifi</TriggerLabel>
+				<ControlPageLabel>Packets Received on Wifi</ControlPageLabel>
+			</State>
+			<State id="wifiEnabled" readonly="YES">
+				<ValueType>Boolean</ValueType>
+				<TriggerLabel>Wifi enabled</TriggerLabel>
+				<ControlPageLabel>Wifi enabled</ControlPageLabel>
+			</State>
+			<State id="wifiStatus" readonly="YES">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Wifi status</TriggerLabel>
+				<ControlPageLabel>Wifi status</ControlPageLabel>
+			</State>
+			<State id="wifiAmountAssociatedDevices" readonly="YES">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>Wifi devices associated</TriggerLabel>
+				<ControlPageLabel>Wifi devices associated</ControlPageLabel>
+			</State>
+			<State id="wifiChannel" readonly="YES">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>Wifi Channel</TriggerLabel>
+				<ControlPageLabel>Wifi Channel</ControlPageLabel>
+			</State>
+            <State id="wifiSSID" readonly="YES">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Wifi SSID</TriggerLabel>
+				<ControlPageLabel>Wifi SSID</ControlPageLabel>
+			</State>
+		</States>
+        <UiDisplayStateId>wifiAmountAssociatedDevices</UiDisplayStateId>
+	 </Device>
+     <Device type="custom" id="lanDeviceInformation">
+		<Name>LAN Device Information</Name>
+		<ConfigUI>
+            <SupportURL>http://bpannier.github.io/routermonitor/</SupportURL>
+            <Field id="macAddress" type="textfield" tooltip="The MAC address of the device you like to get information's from in the form XX:XX:XX:XX:XX:XX. The MAC address is cases sensitive.">
+				<Label>Device MAC Address:</Label>
+			</Field>
+            <Field id="interfaceID" type="textfield" defaultValue="1" tooltip="If your router has more than one LAN interface you can choose the right one here.">
+				<Label>LAN interface ID:</Label>
+			</Field>
+			<Field id="networkRouter" type="menu">
+				<Label>Network Router:</Label>
+				<List class="self" filter="stuff" method="networkRouterGenerator"/>
+			</Field>
+			<Field type="checkbox" id="manualRouterEntry" defaultValue="false"
+				   tooltip="Enable when your router have not been found in the list above and you need to enter the parameter manually. Make sure the UPnP functionality in your router is enabled.">
+				<Label>Manually Enter Router URL:</Label>
+			</Field>
+			<Field id="routerURL" type="textfield" enabledBindingId="manualRouterEntry"
+				   tooltip="The URL to the router device definitions. Make sure the UPnP functionality in your router is enabled then it should appear in the list above. An example of a valid URL is: http://192.168.178.28:49000/tr64desc.xml">
+				<Label>Router URL:</Label>
+			</Field>
+			<Field id="username" type="textfield" tooltip="If your router needs authentication, enter the username here.">
+				<Label>Username(optional):</Label>
+			</Field>
+			<Field id="password" type="textfield" tooltip="If your router needs authentication, enter the password here.">
+				<Label>Password(optional):</Label>
+			</Field>
+            <Field type="checkbox" id="ignoreErrors" defaultValue="false"
+				   tooltip="When enabled any error of this device will be ignored. This is useful, to avoid too much error log entries after validation the configuration is ok.">
+				<Label>Ignore Errors:</Label>
+			</Field>
+            <Field id="address" type="textfield" hidden="true">
+				<Label />
+			</Field>
+		</ConfigUI>
+        <States>
+			<State id="ipAddress" readonly="YES">
+				<ValueType>String</ValueType>
+				<TriggerLabel>IP Address</TriggerLabel>
+				<ControlPageLabel>IP Address</ControlPageLabel>
+			</State>
+            <State id="hostname" readonly="YES">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Hostname</TriggerLabel>
+				<ControlPageLabel>Hostname</ControlPageLabel>
+			</State>
+            <State id="leasetime" readonly="YES">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>Lease Time</TriggerLabel>
+				<ControlPageLabel>Lease Time</ControlPageLabel>
+			</State>
+            <State id="active" readonly="YES">
+				<ValueType>Boolean</ValueType>
+				<TriggerLabel>Is active</TriggerLabel>
+				<ControlPageLabel>Is active</ControlPageLabel>
+			</State>
+        </States>
+         <UiDisplayStateId>active</UiDisplayStateId>
+    </Device>
+    <Device type="custom" id="wifiDeviceInformation">
+		<Name>Wifi Device Information</Name>
+		<ConfigUI>
+            <SupportURL>http://bpannier.github.io/routermonitor/</SupportURL>
+            <Field id="macAddress" type="textfield" tooltip="The MAC address of the device you like to get information's from in the form XX:XX:XX:XX:XX:XX. The MAC address is cases sensitive.">
+				<Label>Device MAC Address:</Label>
+			</Field>
+            <Field id="interfaceID" type="textfield" defaultValue="1" tooltip="If your router has more than one WIFI interface you can choose the right one here.">
+				<Label>LAN interface ID:</Label>
+			</Field>
+			<Field id="networkRouter" type="menu">
+				<Label>Network Router:</Label>
+				<List class="self" filter="stuff" method="networkRouterGenerator"/>
+			</Field>
+			<Field type="checkbox" id="manualRouterEntry" defaultValue="false"
+				   tooltip="Enable when your router have not been found in the list above and you need to enter the parameter manually. Make sure the UPnP functionality in your router is enabled.">
+				<Label>Manually Enter Router URL:</Label>
+			</Field>
+			<Field id="routerURL" type="textfield" enabledBindingId="manualRouterEntry"
+				   tooltip="The URL to the router device definitions. Make sure the UPnP functionality in your router is enabled then it should appear in the list above. An example of a valid URL is: http://192.168.178.28:49000/tr64desc.xml">
+				<Label>Router URL:</Label>
+			</Field>
+			<Field id="username" type="textfield" tooltip="If your router needs authentication, enter the username here.">
+				<Label>Username(optional):</Label>
+			</Field>
+			<Field id="password" type="textfield" tooltip="If your router needs authentication, enter the password here.">
+				<Label>Password(optional):</Label>
+			</Field>
+            <Field type="checkbox" id="ignoreErrors" defaultValue="false"
+				   tooltip="When enabled any error of this device will be ignored. This is useful, to avoid too much error log entries after validation the configuration is ok.">
+				<Label>Ignore Errors:</Label>
+			</Field>
+            <Field id="address" type="textfield" hidden="true">
+				<Label />
+			</Field>
+		</ConfigUI>
+        <States>
+			<State id="ipAddress" readonly="YES">
+				<ValueType>String</ValueType>
+				<TriggerLabel>IP Address</TriggerLabel>
+				<ControlPageLabel>IP Address</ControlPageLabel>
+			</State>
+            <State id="authenticated" readonly="YES">
+				<ValueType>Boolean</ValueType>
+				<TriggerLabel>Is authenticated</TriggerLabel>
+				<ControlPageLabel>Is authenticated</ControlPageLabel>
+			</State>
+        </States>
+         <UiDisplayStateId>authenticated</UiDisplayStateId>
+    </Device>
+    <Device type="custom" id="fritzSystem">
+		<Name>Fritz Product</Name>
+		<ConfigUI>
+            <SupportURL>http://bpannier.github.io/routermonitor/</SupportURL>
+			<Field id="networkRouter" type="menu">
+				<Label>Network Router:</Label>
+				<List class="self" filter="stuff" method="networkRouterGenerator"/>
+			</Field>
+			<Field type="checkbox" id="manualRouterEntry" defaultValue="false"
+				   tooltip="Enable when your router have not been found in the list above and you need to enter the parameter manually. Make sure the UPnP functionality in your router is enabled.">
+				<Label>Manually Enter Router URL:</Label>
+			</Field>
+			<Field id="routerURL" type="textfield" enabledBindingId="manualRouterEntry"
+				   tooltip="The URL to the router device definitions. Make sure the UPnP functionality in your router is enabled then it should appear in the list above. An example of a valid URL is: http://192.168.178.28:49000/tr64desc.xml">
+				<Label>Router URL:</Label>
+			</Field>
+			<Field id="username" type="textfield" tooltip="If your router needs authentication, enter the username here.">
+				<Label>Username(optional):</Label>
+			</Field>
+			<Field id="password" type="textfield" tooltip="If your router needs authentication, enter the password here.">
+				<Label>Password(optional):</Label>
+			</Field>
+            <Field type="checkbox" id="ignoreErrors" defaultValue="false"
+				   tooltip="When enabled any error of this device will be ignored. This is useful, to avoid too much error log entries after validation the configuration is ok.">
+				<Label>Ignore Errors:</Label>
+			</Field>
+            <Field id="address" type="textfield" hidden="true">
+				<Label />
+			</Field>
+		</ConfigUI>
+		<States>
+			<State id="callListEntryAmount" readonly="YES">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>Call list entry amount</TriggerLabel>
+				<ControlPageLabel>Call list entry amount</ControlPageLabel>
+			</State>
+            <State id="lastCallCalledNumber" readonly="YES">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Called number of last call</TriggerLabel>
+				<ControlPageLabel>Called number of last call</ControlPageLabel>
+			</State>
+            <State id="lastCallCaller" readonly="YES">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Caller number of last call</TriggerLabel>
+				<ControlPageLabel>Caller number of last call</ControlPageLabel>
+			</State>
+            <State id="lastCallDate" readonly="YES">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Date of last call</TriggerLabel>
+				<ControlPageLabel>Date of last call</ControlPageLabel>
+			</State>
+            <State id="lastCallDevice" readonly="YES">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Device used for last call</TriggerLabel>
+				<ControlPageLabel>Device used for last call</ControlPageLabel>
+			</State>
+            <State id="lastCallType" readonly="YES">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>Type of last call</TriggerLabel>
+				<ControlPageLabel>Type of last call</ControlPageLabel>
+			</State>
+            <State id="lastCallDuration" readonly="YES">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Duration of last call</TriggerLabel>
+				<ControlPageLabel>Duration of last call</ControlPageLabel>
+			</State>
+             <State id="lastCallNumberType" readonly="YES">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Number type of last call</TriggerLabel>
+				<ControlPageLabel>Number type of last call</ControlPageLabel>
+			</State>
+        </States>
+        <UiDisplayStateId>callListEntryAmount</UiDisplayStateId>
+    </Device>
+
+</Devices>

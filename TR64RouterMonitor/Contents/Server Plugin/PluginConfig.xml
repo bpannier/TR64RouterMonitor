@@ -1,0 +1,20 @@
+<PluginConfig>
+    <SupportURL>http://bpannier.github.io/routermonitor/</SupportURL>
+    <Field id="updateFrequency" type="textfield" defaultValue="300"
+           tooltip="How often should any of the devices be updated, pause time in seconds.">
+        <Label>Update frequency:</Label>
+    </Field>
+    <Field type="checkbox" id="debug" defaultValue="false" tooltip="Enable to get more information's in the logfile">
+        <Label>Turn on Debug:</Label>
+    </Field>
+    <Field id="httpProxy" type="textfield" tooltip="Add a http proxy in the form http://proxy.host:port/.">
+        <Label>HTTP Proxy(optional):</Label>
+    </Field>
+    <Field id="httpsProxy" type="textfield" tooltip="Add a https proxy in the form https://proxy.host:port/.">
+        <Label>HTTPS Proxy(optional):</Label>
+    </Field>
+    <Field id="timeout" type="textfield" defaultValue="1"
+           tooltip="Add a default timeout for any network interaction in seconds.">
+        <Label>Network timeout:</Label>
+    </Field>
+</PluginConfig>
