@@ -21,7 +21,7 @@ Installation
 
 Find the latest version here for download::
 
-    https://github.com/bpannier/TR64RouterMonitor/dist/TR64RouterMonitor-latest.zip
+    https://github.com/bpannier/TR64RouterMonitor/raw/master/dist/TR64RouterMonitor-latest.zip
 
 After unpacking, double click on it should bring Indigo up and ask if the plugin should be installed.
 
