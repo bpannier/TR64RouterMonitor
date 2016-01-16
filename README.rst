@@ -1,7 +1,7 @@
 TR 64 - Router Monitor - Indigo Plugin
 ======================================
 
-This plugin for Indigo let you interact with devices which supports UPnP/TR64. Usually these are devices which
+This plugin for Indigo Pro let you interact with devices which supports UPnP/TR64. Usually these are devices which
 do provide any kind of network connection like Cable/ADSL/WAN modems, WIFI-, LAN-router but as well some media devices.
 For now this plugin supports mainly:
 
@@ -24,6 +24,13 @@ Find the latest version here for download::
     https://github.com/bpannier/TR64RouterMonitor/dist/TR64RouterMonitor-latest.zip
 
 After unpacking, double click on it should bring Indigo up and ask if the plugin should be installed.
+
+Documentation
+=============
+
+The latest documentation can always be found::
+
+    https://github.com/bpannier/TR64RouterMonitor/blob/master/README.rst
 
 Configuration
 =============
