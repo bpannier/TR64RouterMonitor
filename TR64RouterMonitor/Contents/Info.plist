@@ -3,22 +3,22 @@
 <plist version="1.0">
 <dict>
     <key>PluginVersion</key>
-    <string>0.0.REPLACEME</string>
+    <string>1.0.REPLACEME</string>
     <key>ServerApiVersion</key>
     <string>1.0.0</string>
     <key>CFBundleDisplayName</key>
-    <string>Router Monitor</string>
+    <string>TR64 Router Monitor</string>
     <key>CFBundleName</key>
-    <string>Router Monitor</string>
+    <string>TR64 Router Monitor</string>
     <key>CFBundleIdentifier</key>
-    <string>ro.ka.indigo-plugin.routermonitor</string>
+    <string>ro.ka.indigo-plugin.tr64routermonitor</string>
     <key>CFBundleVersion</key>
     <string>1.0.0</string>
     <key>CFBundleURLTypes</key>
     <array>
         <dict>
             <key>CFBundleURLName</key>
-            <string>http://bpannier.github.io/routermonitor/</string>
+            <string>https://github.com/bpannier/TR64RouterMonitor/blob/master/README.rst</string>
         </dict>
     </array>
 </dict>

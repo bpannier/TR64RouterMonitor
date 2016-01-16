@@ -2,7 +2,7 @@
 	<Device type="custom" id="routerSystem">
 		<Name>Router System</Name>
 		<ConfigUI>
-            <SupportURL>http://bpannier.github.io/routermonitor/</SupportURL>
+            <SupportURL>https://github.com/bpannier/TR64RouterMonitor/blob/master/README.rst</SupportURL>
 			<Field id="networkRouter" type="menu">
 				<Label>Network Router:</Label>
 				<List class="self" filter="stuff" method="networkRouterGenerator"/>
@@ -61,7 +61,7 @@
     <Device type="custom" id="routerLan">
 		<Name>LAN Router</Name>
 		<ConfigUI>
-            <SupportURL>http://bpannier.github.io/routermonitor/</SupportURL>
+            <SupportURL>https://github.com/bpannier/TR64RouterMonitor/blob/master/README.rst</SupportURL>
             <Field id="interfaceID" type="textfield" defaultValue="1" tooltip="If your router has more than one LAN interface you can choose the right one here. Needs to be positive number.">
 				<Label>LAN interface ID:</Label>
 			</Field>
@@ -143,7 +143,7 @@
     <Device type="custom" id="routerWan">
 		<Name>WAN Router</Name>
 		<ConfigUI>
-            <SupportURL>http://bpannier.github.io/routermonitor/</SupportURL>
+            <SupportURL>https://github.com/bpannier/TR64RouterMonitor/blob/master/README.rst</SupportURL>
             <Field id="interfaceID" type="textfield" defaultValue="1" tooltip="If your router has more than one WAN interface you can choose the right one here. Needs to be positive number.">
 				<Label>WAN interface ID:</Label>
 			</Field>
@@ -255,7 +255,7 @@
     <Device type="custom" id="routerWifi">
 		<Name>WIFI Router</Name>
 		<ConfigUI>
-            <SupportURL>http://bpannier.github.io/routermonitor/</SupportURL>
+            <SupportURL>https://github.com/bpannier/TR64RouterMonitor/blob/master/README.rst</SupportURL>
             <Field id="interfaceID" type="textfield" defaultValue="1" tooltip="If your router has more than one WIFI interface (2.4, 5ghz etc) you can choose the right one here. Needs to be positive number.">
 				<Label>WIFI interface ID:</Label>
 			</Field>
@@ -337,7 +337,7 @@
      <Device type="custom" id="lanDeviceInformation">
 		<Name>LAN Device Information</Name>
 		<ConfigUI>
-            <SupportURL>http://bpannier.github.io/routermonitor/</SupportURL>
+            <SupportURL>https://github.com/bpannier/TR64RouterMonitor/blob/master/README.rst</SupportURL>
             <Field id="macAddress" type="textfield" tooltip="The MAC address of the device you like to get information's from in the form XX:XX:XX:XX:XX:XX. The MAC address is cases sensitive.">
 				<Label>Device MAC Address:</Label>
 			</Field>
@@ -397,7 +397,7 @@
     <Device type="custom" id="wifiDeviceInformation">
 		<Name>Wifi Device Information</Name>
 		<ConfigUI>
-            <SupportURL>http://bpannier.github.io/routermonitor/</SupportURL>
+            <SupportURL>https://github.com/bpannier/TR64RouterMonitor/blob/master/README.rst</SupportURL>
             <Field id="macAddress" type="textfield" tooltip="The MAC address of the device you like to get information's from in the form XX:XX:XX:XX:XX:XX. The MAC address is cases sensitive.">
 				<Label>Device MAC Address:</Label>
 			</Field>
@@ -447,7 +447,7 @@
     <Device type="custom" id="fritzSystem">
 		<Name>Fritz Product</Name>
 		<ConfigUI>
-            <SupportURL>http://bpannier.github.io/routermonitor/</SupportURL>
+            <SupportURL>https://github.com/bpannier/TR64RouterMonitor/blob/master/README.rst</SupportURL>
 			<Field id="networkRouter" type="menu">
 				<Label>Network Router:</Label>
 				<List class="self" filter="stuff" method="networkRouterGenerator"/>

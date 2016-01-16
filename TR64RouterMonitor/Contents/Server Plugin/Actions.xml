@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Actions>
-    <SupportURL>http://bpannier.github.io/routermonitor/</SupportURL>
+    <SupportURL>https://github.com/bpannier/TR64RouterMonitor/blob/master/README.rst</SupportURL>
     <Action id="resetDevice" deviceFilter="self.routerSystem">
         <Name>Reset Device</Name>
         <CallbackMethod>queueAction</CallbackMethod>

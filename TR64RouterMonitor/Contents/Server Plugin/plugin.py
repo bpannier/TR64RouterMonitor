@@ -372,6 +372,13 @@ class Plugin(indigo.PluginBase):
 
         return indigo.PluginBase.deviceStartComm(self, dev)
 
+    def deviceStopComm(self, dev):
+        """Stop a device after a configuration
+
+        :param dev: the device to start
+        """
+        dev.updateStateImageOnServer(indigo.kStateImageSel.SensorOff)
+
     def cleanSkipStateUpdate(self):
         """For any failed state call we clean the state so that a retry can be made
         """
